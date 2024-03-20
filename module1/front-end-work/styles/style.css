@@ -1,0 +1,79 @@
+body {
+    /* background-color: red; */
+}
+
+a {
+    color: white;
+    font-size: 24px
+}
+
+a:active {
+    font-size: 32px;
+    color: yellow;
+}
+
+main {
+    /* background-color: purple; */
+}
+
+
+/* This is a comment */
+
+
+/* NAV BAR  */
+nav {
+
+}
+
+/* Desendent ( ) */
+/* section p {
+    color: hotpink;
+ } */
+
+ /* Child Combinator  */
+ /* section > p {
+    color: hotpink;
+ } */
+
+ /* Adjacent */
+ /* h2 + p {
+    color: hotpink;
+ } */
+
+ /* h2 ~ p {
+    color: hotpink;
+ } */
+ 
+ 
+ .my_items {
+    /* background-color: royalblue; */
+    padding: 15px;
+ }
+
+ li:nth-child(4) {
+    color: red;
+ }
+
+ #bio {
+    background-color: hotpink;
+    padding: 20px;
+ }
+
+ #bio::first-line {
+    color: green;
+ }
+ 
+ #classes::first-letter {
+    color: blue;
+ }
+
+
+
+
+
+
+
+
+
+
+
