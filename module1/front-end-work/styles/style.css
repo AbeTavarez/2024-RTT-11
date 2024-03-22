@@ -67,11 +67,18 @@ nav {
     color: blue;
  }
 
+li {
+   list-style: none;
+}
 
+/* li::before {
+   content: '🎮 ';
+} */
 
-
-
-
+li::before {
+   content: url('../images/icons8-check-16.png');
+   margin-right: 5px;
+}
 
 
 
