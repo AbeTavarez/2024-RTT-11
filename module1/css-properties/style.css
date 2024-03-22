@@ -13,13 +13,41 @@ p {
   box-shadow: 18px -5px 22px 22px rgba(0, 0, 0, 0.81);
 }
 
-h2 {
+/* h2 {
   float: left;
   margin-right: 10px;
   font-size: 32px;
-}
+} */
+
+
+
+/* LOGIN AND GET IN TOUCH FORMS */
 
 span {
   float: right;
   font-size: 48px;
+}
+
+form#login {
+    background: gray;
+}
+
+form#login img {
+    position: relative;
+    top: -25px;
+    left: 48%;
+}
+
+form#login div, h2 {
+    text-align: center
+}
+
+/* CSS Attribute Selectors */
+/* https://www.w3schools.com/css/css_attribute_selectors.asp */
+input[type="submit"] {
+    margin-left: 48%
+}
+
+form#getintouch {
+    background: red;
 }
