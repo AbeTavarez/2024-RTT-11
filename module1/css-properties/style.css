@@ -13,11 +13,11 @@ p {
   box-shadow: 18px -5px 22px 22px rgba(0, 0, 0, 0.81);
 }
 
-/* h2 {
+div > h2 {
   float: left;
   margin-right: 10px;
   font-size: 32px;
-} */
+}
 
 
 
@@ -30,6 +30,8 @@ span {
 
 form#login {
     background: gray;
+    margin-top: 50px;
+    height: 400px;
 }
 
 form#login img {
@@ -38,8 +40,15 @@ form#login img {
     left: 48%;
 }
 
-form#login div, h2 {
+form#login > h2 {
     text-align: center
+}
+form#login div {
+    text-align: center
+}
+
+small {
+    margin-left: 45%;
 }
 
 /* CSS Attribute Selectors */
