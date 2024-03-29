@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'SuperMarioBros';
+	src: local('SuperMarioBros'), url('./SuperMarioBros.woff') format('woff');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_181">Text with this font applied</p> */
+.fontsforweb_fontid_181 {
+	font-family: 'SuperMarioBros' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */
+
+
+
+
+
+
+
+
+/* this is not required for the font  */
+li {
+	margin: 25px 0;
+	font-weight: bold;
+}
+
+div, code {
+	margin: 25px 0;
+
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="fontsforweb_fontid_181">How to setup downloaded fonts</h1>
+
+    <!-- INSTRUCTIONS  -->
+    <ol>
+      <li>Download the fonts you want:</li>
+      <ul>
+        <li>
+          <a
+            href="https://fontsforweb.com/font/show?id=181"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Super Mario Fonts</a
+          >
+        </li>
+      </ul>
+
+      <li>Extract the .woff and font.css files. Then drag the .woff file to the css folder of your project.</li>
+
+      <li>
+        Add the custom font css rules from the font.css file to your styles.css file:
+        <div>
+          <code>
+            @font-face { font-family: 'SuperMarioBros'; src:
+            local('SuperMarioBros'), url('./SuperMarioBros.woff')
+            format('woff'); } /* use this class to attach this font to any
+            element i.e.
+            <p class="fontsforweb_fontid_181">Text with this font applied</p>
+            */ .fontsforweb_fontid_181 { font-family: 'SuperMarioBros'
+            !important; } /* Font downloaded from FontsForWeb.com */
+          </code>
+        </div>
+      </li>
+
+      <li>
+        Finally add the class to the element you want to apply the custom fonts
+        to:
+
+        <div>
+          <code>
+            h1 class="fontsforweb_fontid_181">
+              How to setup downloaded fonts
+            /h1>
+          </code>
+        </div>
+      </li>
+    </ol>
+  </body>
+</html>
