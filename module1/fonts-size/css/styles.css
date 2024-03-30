@@ -1,0 +1,14 @@
+/* change the size of the root element */
+/* html {font-size: 30px} */
+
+/* border is 3x the font-size of the .p-1  */
+.p-1 {
+    font-size: 20px;
+    border: 3em solid rebeccapurple; 
+}
+
+/* border is 3x the font-size of the root element (<html/>) */
+.p-2 {
+    font-size: 20px;
+    border: 3rem solid rebeccapurple;
+}
