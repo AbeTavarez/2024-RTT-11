@@ -135,7 +135,7 @@ let x = 30;
 while (x > 0) {
 	x /= 2;
 	x--;
-
+	
 	if (x % 1 != 0) {
 		break;
 	}
@@ -146,21 +146,71 @@ while (x > 0) {
 let i = 0;
 
 while (i <= 10) {
-    console.log(i);
+	console.log(i);
     i++; // <====== increment
 }
 
 let j = 0;
 
 while (j <= 20) {
-    if (j % 2 === 0) {
-        console.log(`${j} is even`);
+	if (j % 2 === 0) {
+		console.log(`${j} is even`);
     } else {
-        console.log(`${j} is odd`);
+		console.log(`${j} is odd`);
     }
-
+	
     j++;
 }
+
+//? =========== Do While Loops =================
+
+let c = 10;
+
+do {
+	c--;
+	console.log(c);
+	
+	if (c === 5) {
+		c--;
+		continue
+	}
+	console.log('Hello');
+	
+} while (c > 50);
+
+
+
+
+//? =========== Labeled While Loops =================
+
+let d = 1;
+let y = 1;
+
+myLoop: while (true) {
+	console.log(`Outer loop ${d}.`);
+	d++;
+
+	while (true) {
+		console.log(`Inner loop ${y}.`);
+		y++;
+
+		if (d == 5 && y % 5 == 0) {
+			break myLoop;
+		} else if (y % 5 == 0) {
+			break;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
