@@ -149,3 +149,9 @@ aprilMovies.push('Fast 27');
 console.log(aprilMovies);
 
 console.log(copyOfAprilMovies);
+
+
+
+const names  = ["Maria", "Peter", "Elon", 'Elisa', 'Annie',"Elian"];
+// console.log(names.sort());
+console.log(names.sort((a,b) => a.localeCompare(b)));
