@@ -75,7 +75,70 @@ console.log(devObj);
 console.log(devObj1);
 
 
+// ======== Default Parameters
+
+// function setColor(bicycle, color) {
+//     console.log(color);
+// 	// set color to 'purple' if not provided
+// 	bicycle.color = color || 'purple';
+// }
+
+
+function setColor(bicycle, wheels, size, color = 'Yellow') {
+    console.log(color);
+    bicycle.color = color;
+    bicycle.wheels = wheels;
+    bicycle.size = size;
+}
+
+const bikeObj = {};
+setColor(bikeObj, 2, '20 inches');
+console.log(bikeObj);
+
+
+// ========= Functions as Arguments
+
+const colors = ['red', 'green', 'blue'];
+
+// Named Function
+function printUpperCaseColors(color) {
+    console.log(color.toUpperCase());
+}
+
+colors.forEach(printUpperCaseColors);
+
+//
+colors.forEach(function(color, index, arr) {
+    console.log(color + index);
+    console.log(arr);
+});
+
+// Arrow function
+colors.forEach((color) => console.log(color));
 
 
 
 
+//
+const user = {};
+
+function createUser(userObj, name, age, role) {
+    userObj.role = role;
+    userObj.age = age;
+    userObj.name = name;
+}
+
+
+createUser(user, 'max', 30, 'dev');
+
+console.log(user);
+
+(function() {
+	console.log('IIFE');
+})();
+
+
+
+console.log(Date.now());
+
+console.log(Math.random());
