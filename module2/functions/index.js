@@ -133,6 +133,7 @@ createUser(user, 'max', 30, 'dev');
 
 console.log(user);
 
+// IIFE function
 (function() {
 	console.log('IIFE');
 })();
