@@ -10,12 +10,13 @@ let intervalId;
 //
 function startGame(event) {
     console.log("start....");
-    p.style.display = "block";
+    p.style.display = "block"; // show the hidden text
   
-    const start = Date.now();
+    const start = Date.now(); // create new date
+
+    // set a interval for every second (1000 milliseconds)
      intervalId = setInterval(() => {
-      const milliSecs = Date.now() - start;
-      console.log(`Time: ${Math.floor(milliSecs / 1000)}`);
+      const milliSecs = Date.now() - start; 
       displayTimer.innerHTML = `<h3>Time: ${Math.floor(milliSecs / 1000)}</h3>`
     }, 1000);
   }
