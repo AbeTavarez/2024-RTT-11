@@ -1,13 +1,24 @@
-//
+// Global variables
 const input = document.getElementById("speed-input");
 const startGameBtn = document.getElementById("start-game");
 const p = document.querySelector("p");
 const displayTimer = document.getElementById("display-timer");
-
 let timer;
 let intervalId;
 
-//
+
+// compares the target text and the user text
+function compareText(e) {
+  console.dir(e.target.value);
+  console.log(e.target.value === p.innerText);
+  // check
+  if (e.target.value === p.innerText) {
+      clearInterval(intervalId); //stops timer
+  }
+}
+
+
+// Start game
 function startGame(event) {
     console.log("start....");
     p.style.display = "block"; // show the hidden text
@@ -22,24 +33,8 @@ function startGame(event) {
   }
 
 
-
-/**
- * User input (textarea)
- */
-input.addEventListener("keypress", function (e) {
-  setTimeout(() => {
-    console.log(e.target.value);
-    console.log(e.target.value === p.innerText);
-    //
-    if (e.target.value === p.innerText) {
-        clearInterval(intervalId)
-    }
-  }, 1);
-});
-
-/**
- * Start Game
- */
+// ===== Event Listeners
+input.addEventListener("input", compareText); // <-- input event runs every time the value changes / no need for setTimeout 
 startGameBtn.addEventListener("click", startGame);
 
 
