@@ -11,6 +11,26 @@ router.get("/", (req, res) => {
   res.send("Hello from Grades router");
 });
 
+
+/**
+ * POST /grades/
+ */
+router.post('/', async (req, res) => {
+   const collection = await db.collection("grades");
+   const newDocument = req.body;
+
+   // rename the fields for compatibility
+   if (newDocument.student_id) {
+    newDocument.learner_id = newDocument.student_id;
+    delete newDocument.student_id;
+   }
+
+   const result = await collection.insertOne(newDocument);
+   res.send(result).status(204);
+});
+
+
+
 /**
  * GET grades/:id
  */
@@ -24,12 +44,21 @@ router.get("/:id", async (req, res) => {
 });
 
 /**
+ * GET /grades/student/:id
+ * Redirect to /grades/learner/:id
+ */
+router.get('/student/:id', async (req, res) => {
+    res.redirect(`/grades/learner/${req.params.id}`);
+});
+
+
+/**
  * Get a student's grade data
  * GET grades/student/:id
  */
-router.get("/student/:id", async (req, res) => {
+router.get("/learner/:id", async (req, res) => {
   let collection = await db.collection("grades");
-  let query = { student_id: Number(req.params.id) };
+  let query = { learner_id: Number(req.params.id) };
   let result = await collection.find(query).toArray();
 
   if (!result) res.send("Not found").status(404);
