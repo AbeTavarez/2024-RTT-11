@@ -8,7 +8,14 @@ const router = express.Router();
  * GET grades/
  */
 router.get("/", (req, res) => {
-  res.send("Hello from Grades router");
+    console.log(req.query);
+
+    if (req.query.name) {
+        res.send(`Hello ${req.query.name}`);
+    } else {
+        res.send("Hello from Grades router");
+    }
+    
 });
 
 
