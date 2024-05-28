@@ -109,18 +109,56 @@ class Animal {
     console.log(sound);
   }
 
-  toString() {
-    return `This Animal has ${this.eyes} eyes and ${this.legs} legs. It ${
-      this.isAwake ? "is" : "is not"
-    } awake, and ${this.isMoving ? "is" : "is not"} moving.`;
+  toString(animal = 'Animal') {
+    return `This ${animal} has ${this.eyes} eyes and ${this.legs} legs. It ${this.isAwake ? 'is' : 'is not'} awake, and ${this.isMoving ? 'is' : 'is not'} moving.`;
   }
 }
 
-class Cat extends Animal {}
 
-class Dog extends Animal {}
+// Cat Class
+class Cat extends Animal {
+  constructor(fur, isAwake, isMoving) {
+    super(2, 4, isAwake, isMoving);
+    this.fur = fur;
+  }
+  speak() {
+    super.speak("Meow...");
+  }
+  toString() {
+    return super.toString("Cat");
+  }
+}
 
-class Cow extends Animal {}
+
+// Dog Class
+class Dog extends Animal {
+  constructor(fur, isAwake, isMoving) {
+    super(2, 4, isAwake, isMoving);
+    this.fur = fur;
+  }
+  speak() {
+    super.speak("Woof!");
+  }
+  toString() {
+    return super.toString("Dog");
+  }
+}
+
+// Cow Class
+class Cow extends Animal {
+  constructor(hair, isAwake, isMoving) {
+    super(2, 4, isAwake, isMoving);
+    this.hair = hair;
+  }
+
+  speak() {
+    super.speak('Moo!');
+  }
+
+  toString() {
+    super.toString('Cow');
+  }
+}
 
 console.log("============================================");
 const cat = new Animal(2, 4, true, false);
@@ -133,4 +171,61 @@ dog.speak("woof!");
 console.log(cat);
 console.log(dog.toString());
 
-console.dir(Dog);
+console.log("============================================");
+
+const cat1 = new Cat('Orange', true, false);
+cat1.sleep();
+console.log(cat1);
+
+const dog1 = new Dog('Gold', true, true);
+dog1.sit();
+console.log(dog1);
+
+const cow1 = new Cow('Brown', true, false);
+cow1.walk();
+cow1.sleep();
+console.log(cow1);
+
+
+class Human extends Animal {
+    constructor(hair, name, language, isAwake, isMoving) {
+        super(2, 2, isAwake, isMoving);
+        this.hair = hair;
+        this.name = name;
+        this.language = language; 
+    }
+}
+
+const me = new Human('black', 'Abe', 'Natural Language', false, false);
+console.log(me);
+
+
+class Developer extends Human {
+    // coffeeLevel = 0;
+    static MAXCOFFEELEVEL = 10;
+    location = {};
+    skills = [];
+    constructor(hair, name, isAwake, isMoving, title, salary, team, city, state, ...skills) {
+        super(hair, name, 'Natural Language' , isAwake, isMoving);
+        this.title = title;
+        this.salary = salary;
+        this.team = team;
+        this.coffeeLevel = 0;
+        this.location.city = city;
+        this.location.state = state;
+        this.skills = skills;
+    }
+
+    drinkCoffee() {
+        if (this.coffeeLevel < Developer.MAXCOFFEELEVEL) {
+            this.coffeeLevel++;
+        }
+    }
+}
+console.log(Developer.MAXCOFFEELEVEL);
+
+const dev1 = new Developer('HotPink', 'Max', false, true, 'Backend Developer', 90000, 'Dev Team', 'NYC', 'New York', 'html', 'js');
+dev1.drinkCoffee();
+dev1.drinkCoffee();
+dev1.sit();
+console.log(dev1);
