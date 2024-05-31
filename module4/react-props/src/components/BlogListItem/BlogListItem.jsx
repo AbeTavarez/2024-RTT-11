@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function BlogListItem({blog, id}) {
 // console.log(props);
 
@@ -16,6 +18,12 @@ function BlogListItem({blog, id}) {
       <hr />
     </>
   );
+}
+
+
+BlogListItem.propTypes = {
+    blog: PropTypes.object,
+    id: PropTypes.string,
 }
 
 export default BlogListItem;
